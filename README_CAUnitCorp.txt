@@ -1,0 +1,3 @@
+
+
+Caña Unit Corporación nace del llamado social puertorriqueño hacia la seguridad alimenticia y desarrollo económico. Como respuesta a tus necesidades, Caña Unit Corporación e Ish7R establece proyectos sin fines de lucro en Juana Díaz, P.R. y ofrece servicios de asesoramiento para nuevos emprendedores puertorriqueños. Establecidos legalmente como entidad para el avance económico, cultural y social, Caña Unit Corporación fue registrada en Puerto Rico en 2024. 
