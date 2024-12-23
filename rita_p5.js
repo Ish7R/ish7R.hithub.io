@@ -22,14 +22,7 @@ text(loadpoem.join('\n'),10,15)
 }
 
 function changeWord () {
-	// Rita analyzes POS
-		let stanzas="";
-		let poem;
-	for (p=0; p<loadpoem.length; p++) {
-	 poem= RiTa.tokenize(loadpoem[p]);
-	//Replacing nouns with mousepress
-	for (var n=0;  n<poem.length; n++) {
-	  let newWord= poem[n];
+
 		
 		//Replace Nouns
 		if(RiTa.isNoun(newWord)){
