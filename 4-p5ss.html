@@ -1,0 +1,201 @@
+--> SUBSCRIBE YOUTUBE @ISH7R  --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AHDIATREMALAMIA</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+  <style>
+    /* CSS for the bottom corner image */
+    .bottom-corner-image {
+      position: fixed;  /* Fixes the image to the viewport */
+      bottom: 0;        /* Positions the image at the bottom */
+      right: 0;         /* Positions the image at the right side */
+      width: 20vw;      /* 20% of the viewport width */
+      height: 40vh;     /* 30% of the viewport height */
+      object-fit: contain; /* Ensures the image scales proportionally */
+      margin: 10px;     /* Adds a margin from the edges */
+    }
+  </style>
+  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O9RkF18mOgI?si=PKto_vJm0_MzW9W9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<!-- CSS to position the iframe in the bottom-left corner -->
+<style>
+  iframe {
+    position: absolute;
+    bottom: 10px;  /* Adjusts distance from the bottom */
+    left: 10px;    /* Adjusts distance from the left */
+    width: 320px;  /* Width of the iframe */
+    height: 280px; /* Height of the iframe */
+    border: none;  /* Optional: removes iframe border */
+  }
+</style>
+</head>
+<body>
+<!-- Image positioned in the bottom right corner -->
+  <img id="bottomCornerImage" class="bottom-corner-image" alt="Bottom Corner Image">
+  <!-- Image centered in the screen -->
+  <img id="centeredImage" class="centered-image" src="https://i.imgur.com/q15vlAx.jpeg" alt="Centered Image">
+
+  <style>
+    /* CSS for centering the image */
+    .centered-image {
+      position: fixed;        /* Fix the image to the screen */
+      top: 50%;                /* Position the image vertically in the center */
+      left: 50%;               /* Position the image horizontally in the center */
+      transform: translate(-50%, -50%); /* Adjust for exact centering */
+      width: 600px;            /* Set the width of the image to 40px */
+      height: 700px;           /* Set the height of the image to 40px */
+      object-fit: contain;    /* Ensure the image scales proportionally */
+    }
+  </style>
+
+    <style>
+    /* Style for the element at (500, 500) */
+    .target-element {
+      position: absolute;
+      top: 500px; /* Positioning at (500, 500) */
+      left: 500px;
+      width: 100px;  /* Example size for the element */
+      height: 100px; /* Example size for the element */
+      background-color: lightblue; /* Just to make it visible */
+    }
+
+    /* Style for the image placed above the element */
+    .above-image {
+      position: absolute;
+      top: 450px;  /* Position the image above the target element */
+      left: 500px; /* Align the image horizontally with the target element */
+      width: 300px;  /* Set the desired size for the image */
+      height: 300px;
+      object-fit: contain; /* Ensure the image scales proportionally */
+    }
+  </style>
+ <!-- The target element located at (500, 500) -->
+  <div class="target-element"></div>
+
+  <!-- The image placed above the target element -->
+  <img class="above-image" src="https://i.imgur.com/CqdyGvU.jpeg" alt="Above Element Image">
+  
+  <script>
+    // DOM Web elements, A collab with CHATGPT-4o & Imigu <3
+    let x = 0;
+    let y = 0;
+    let xspeed = 2;  // Speed for horizontal movement
+    let yspeed = 2;  // Speed for vertical movement
+
+    let imgPath = ('https://i.imgur.com/cRux5Kk.jpeg'); 
+    // Path to your image
+    document.getElementById('bottomCornerImage').src = imgPath; // Set the image source dynamically
+
+    function setup() {
+     createCanvas(windowWidth, windowHeight)
+    background(255,19,240)
+      
+      // Headers 
+      var header = createElement('h1', 'JAJAJAJAJA')
+      header.position(500, 280);
+      header.size(300, 300);
+      header.style('color', 'RED');
+       // Headers 
+      
+    var header9 = createElement('h9', 'CUANDO HAYA QUE DELVOLVERTE A LA RABIZA TE VAS A ENTERAR POR AQUI');
+header9.position(500, 680);
+header9.size(500, 500);  // Adjust the container size if needed
+header9.style('color', 'GREEN');
+header9.style('font-size', '48px');  // Set custom font size
+header9.style('font-weight', 'bold');  // Optional: Make the text bold
+
+      var header2 = createElement('h2', 'Size');
+      header2.position(100, 40);
+      header2.size(20, 20);
+      header2.style('color', 'yellow');
+      
+      var header3 = createElement('h3', 'Speed');
+      header3.position(100, 90);
+      header3.size(20, 20);
+      header3.style('color', 'blue');
+      
+      var header4 = createElement('h4', 'Stop');
+      header4.position(100, 140);
+      header4.size(20, 20);
+      header4.style('color', 'green');
+      
+      var header5 = createElement('h5', 'Star Fill');
+      header5.position(100, 190);
+      header5.size(20, 20);
+      header5.style('color', 'purple');
+
+       var header7= createElement('h7', '@ISH7R ');
+      header7.position(500, 10);
+      header7.size(500, 500);
+      header7.style('color', 'black');
+      
+      // Star fill Color Picker
+      colorPickeroo = createColorPicker('yellow');
+      colorPickeroo.position(20, 200);
+      colorPickeroo.size(50, 50);
+      
+      // SIZE SLIDER
+      sizeSlider = createSlider(20, 200, 60, 20);
+      sizeSlider.position(20, 50);
+      sizeSlider.size(50, 50);
+      
+      // Increase Speed Button
+      var speedPlus = createButton('Increase Speed');
+      speedPlus.position(20, 100);
+      speedPlus.size(120, 30);
+      speedPlus.mousePressed(function () {
+        yspeed += 2;
+        xspeed += 2;
+      });
+      
+      // Stop/Start Button
+      var stopButton = createButton('Stop/Start');
+      stopButton.position(20, 150);
+      stopButton.size(120, 30);
+      stopButton.mousePressed(function () {
+        // Toggle between stop and default speed
+        yspeed = (yspeed === 0) ? 2 : 0;
+        xspeed = (xspeed === 0) ? 2 : 0;
+      });
+    }
+
+    function draw() {
+      
+      // Make the star bounce horizontally
+      x += xspeed;
+      if (x > windowWidth || x < 0) {
+        xspeed = -xspeed;  // Change direction when reaching horizontal edges
+      }
+      
+      // Make the star bounce vertically
+      y += yspeed;
+      if (y > windowHeight || y < 0) {
+        yspeed = -yspeed;  // Change direction when reaching vertical edges
+      }
+
+      // Get values from UI
+      var size = sizeSlider.value();
+      fill(colorPickeroo.color());
+
+function heart (x, y, size) { 
+  beginShape();
+  vertex(x, y);
+  bezierVertex(x - size / 2, y - size / 2, x - size, y + size / 3, x, y + size);
+  bezierVertex(x + size, y + size / 3, x + size / 2, y - size / 2, x, y);
+  endShape(CLOSE);
+}
+ // Draws a dynamic star (drawing a simple ellipse for now)
+  heart(x, y, size, size); // Draw a bouncing circle
+    }
+
+  </script>
+
+</body>
+</html>
+
